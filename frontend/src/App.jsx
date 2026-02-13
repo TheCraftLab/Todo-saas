@@ -33,7 +33,7 @@ function App() {
   return (
     <main className="page">
       <section className="card">
-        <h1>Todo SaaS (starter)</h1>
+        <h1>Todo SaaS LIVE UPDATE TEST</h1>
         <p className="subtitle">Mode dev Docker + hot reload</p>
 
         <form onSubmit={addTodo} className="todo-form">

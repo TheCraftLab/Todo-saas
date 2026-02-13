@@ -1,6 +1,6 @@
 :root {
-  color: #e2e8f0;
-  background: #0f172a;
+  color: #f8fafc;
+  background: #001018;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
 }
 
@@ -10,6 +10,7 @@
 
 body {
   margin: 0;
+  background: radial-gradient(circle at 15% 15%, #14532d 0%, #001018 45%);
 }
 
 .page {
@@ -21,19 +22,21 @@ body {
 
 .card {
   width: min(640px, 100%);
-  background: #111827;
-  border: 1px solid #1f2937;
+  background: #052e16;
+  border: 1px solid #22c55e;
   border-radius: 1rem;
   padding: 1.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 h1 {
   margin: 0;
+  color: #86efac;
 }
 
 .subtitle {
   margin-top: 0.25rem;
-  color: #94a3b8;
+  color: #dcfce7;
 }
 
 .todo-form {
@@ -45,9 +48,9 @@ h1 {
 input[type='text'],
 .todo-form input {
   flex: 1;
-  background: #0b1222;
-  border: 1px solid #1e293b;
-  color: #e2e8f0;
+  background: #064e3b;
+  border: 1px solid #22c55e;
+  color: #f0fdf4;
   border-radius: 0.5rem;
   padding: 0.65rem;
 }
@@ -57,12 +60,12 @@ button {
   border-radius: 0.5rem;
   padding: 0.65rem 0.85rem;
   cursor: pointer;
-  background: #2563eb;
-  color: #fff;
+  background: #16a34a;
+  color: #f0fdf4;
 }
 
 .counter {
-  color: #94a3b8;
+  color: #bbf7d0;
 }
 
 .list {
@@ -78,15 +81,15 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  background: #0b1222;
-  border: 1px solid #1e293b;
+  background: #064e3b;
+  border: 1px solid #15803d;
   padding: 0.6rem;
   border-radius: 0.6rem;
 }
 
 .list li.done span {
   text-decoration: line-through;
-  color: #94a3b8;
+  color: #86efac;
 }
 
 label {
@@ -96,10 +99,10 @@ label {
 }
 
 .danger {
-  background: #ef4444;
+  background: #b91c1c;
 }
 
 .empty {
-  color: #94a3b8;
+  color: #bbf7d0;
   justify-content: center;
 }
