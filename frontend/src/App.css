@@ -1,0 +1,105 @@
+:root {
+  color: #e2e8f0;
+  background: #0f172a;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.card {
+  width: min(640px, 100%);
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 1rem;
+  padding: 1.25rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: 0.25rem;
+  color: #94a3b8;
+}
+
+.todo-form {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+input[type='text'],
+.todo-form input {
+  flex: 1;
+  background: #0b1222;
+  border: 1px solid #1e293b;
+  color: #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 0.65rem;
+}
+
+button {
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.85rem;
+  cursor: pointer;
+  background: #2563eb;
+  color: #fff;
+}
+
+.counter {
+  color: #94a3b8;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: #0b1222;
+  border: 1px solid #1e293b;
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+}
+
+.list li.done span {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.danger {
+  background: #ef4444;
+}
+
+.empty {
+  color: #94a3b8;
+  justify-content: center;
+}
