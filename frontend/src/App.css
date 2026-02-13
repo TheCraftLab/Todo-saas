@@ -64,8 +64,23 @@ button {
   color: #f0fdf4;
 }
 
+button:disabled,
+input:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
 .counter {
   color: #bbf7d0;
+}
+
+.error {
+  margin: 0.5rem 0 0;
+  background: #7f1d1d;
+  border: 1px solid #ef4444;
+  color: #fecaca;
+  border-radius: 0.5rem;
+  padding: 0.6rem;
 }
 
 .list {
@@ -90,6 +105,10 @@ button {
 .list li.done span {
   text-decoration: line-through;
   color: #86efac;
+}
+
+.list li.pending {
+  opacity: 0.72;
 }
 
 label {

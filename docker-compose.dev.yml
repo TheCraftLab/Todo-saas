@@ -1,4 +1,39 @@
 services:
+  todo-db:
+    image: postgres:16-alpine
+    container_name: todo-db-dev
+    environment:
+      POSTGRES_DB: todoapp
+      POSTGRES_USER: todo
+      POSTGRES_PASSWORD: todo
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U todo -d todoapp"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - todo_db_data:/var/lib/postgresql/data
+
+  todo-api:
+    image: node:20-alpine
+    container_name: todo-api-dev
+    working_dir: /app
+    command: sh -c "npm install && npm run dev"
+    ports:
+      - "3001:3001"
+    environment:
+      PORT: "3001"
+      DATABASE_URL: postgresql://todo:todo@todo-db:5432/todoapp
+      CHOKIDAR_USEPOLLING: "true"
+    depends_on:
+      todo-db:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+      - todo_api_node_modules:/app/node_modules
+
   todo-web:
     image: node:20-alpine
     container_name: todo-web-dev
@@ -8,9 +43,12 @@ services:
       - "5173:5173"
     environment:
       CHOKIDAR_USEPOLLING: "true"
+      VITE_API_PROXY_TARGET: http://todo-api:3001
     volumes:
       - ./frontend:/app
       - todo_web_node_modules:/app/node_modules
 
 volumes:
+  todo_db_data:
+  todo_api_node_modules:
   todo_web_node_modules:
